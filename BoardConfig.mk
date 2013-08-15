@@ -19,9 +19,7 @@
 # This variable is set first, so it can be overridden
 # by BoardConfigVendor.mk
 USE_CAMERA_STUB := true
-BOARD_USES_GENERIC_AUDIO := false
 
-TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
@@ -53,6 +51,9 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1610612736
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 12381585408
 BOARD_FLASH_BLOCK_SIZE := 4096
 TARGET_USERIMAGES_USE_EXT4 := true
+
+# Hardware tunables
+BOARD_HARDWARE_CLASS := hardware/samsung/cmhw
 
 # Egl
 BOARD_EGL_CFG := device/samsung/superior/configs/egl.cfg
@@ -95,6 +96,27 @@ BOARD_HAVE_SAMSUNG_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/superior/bluetooth
 BOARD_BLUEDROID_VENDOR_CONF := device/samsung/superior/bluetooth/vnd_superior.txt
 
+# Security
+BOARD_USES_SECURE_SERVICES := true
+
+# Selinux
+BOARD_SEPOLICY_DIRS := \
+    device/samsung/superior/selinux
+
+BOARD_SEPOLICY_UNION := \
+    file_contexts \
+    file.te \
+    device.te \
+    domain.te \
+    pvrsrvinit.te \
+    init.te \
+    mediaserver.te \
+    rild.te \
+    system.te \
+    ueventd.te \
+    vold.te \
+    wpa_supplicant.te
+
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/superior/recovery/recovery_keys.c
@@ -102,6 +124,8 @@ BOARD_UMS_LUNFILE := "/sys/class/android_usb/f_mass_storage/lun0/file"
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
+TARGET_RECOVERY_FSTAB := device/samsung/superior/rootdir/fstab.superior
+RECOVERY_FSTAB_VERSION := 2
 
 # assert
 TARGET_OTA_ASSERT_DEVICE := superior,GT-I9260

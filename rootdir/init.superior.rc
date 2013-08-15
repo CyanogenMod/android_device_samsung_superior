@@ -123,8 +123,26 @@ on fs
     insmod /system/lib/modules/omaplfb_sgx544_112.ko
     start pvrsrvinit
     start pvrsrvctl
+
+# We chown/chmod /efs because mount is run as root + defaults
     chown radio system /efs
     chmod 0775 /efs
+
+# Restorecon
+    restorecon /efs/nv_data.bin
+    restorecon /efs/nv_data.bin.md5
+    restorecon /efs/.nv_core.bak
+    restorecon /efs/.nv_core.bak.md5
+    restorecon /efs/.nv_data.bak
+    restorecon /efs/.nv_data.bak.md5
+    restorecon /efs/.nv_state
+    restorecon /efs/bluetooth/bt_addr
+    restorecon /efs/FactoryApp/factorymode
+    restorecon /efs/FactoryApp/hw_ver
+    restorecon /efs/FactoryApp/keystr
+    restorecon /efs/FactoryApp/serial_no
+    restorecon /efs/imei/mps_code.dat
+    restorecon /efs/wifi/.mac.info
 
 # Permission for radio waketime
     chown system radio /sys/devices/virtual/misc/multipdp/waketime
@@ -629,7 +647,7 @@ service dhcpcd_p2p /system/bin/dhcpcd -aABKL
     disabled
     oneshot
 
-service dhcpcd_bnep0 /system/bin/dhcpcd -ABKL
+service dhcpcd_bt-pan /system/bin/dhcpcd -ABKL
     class main
     disabled
     oneshot
@@ -649,7 +667,12 @@ service dhcpcd_eth0 /system/bin/dhcpcd -ABKL
     disabled
     oneshot
 
-service iprenew_bnep0 /system/bin/dhcpcd -n
+service iprenew_bt-pan /system/bin/dhcpcd -n
+    class main
+    disabled
+    oneshot
+
+service iprenew_eth0 /system/bin/dhcpcd -n
     class main
     disabled
     oneshot

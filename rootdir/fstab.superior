@@ -8,3 +8,12 @@
 /dev/block/platform/omap/omap_hsmmc.1/by-name/CACHE     /cache   ext4    noatime,nosuid,nodev,errors=panic                          wait,check
 /dev/block/platform/omap/omap_hsmmc.1/by-name/EFS       /efs     ext4    noatime,nosuid,nodev,errors=panic                          wait,check
 /dev/block/platform/omap/omap_hsmmc.1/by-name/USERDATA  /data    ext4    noatime,nosuid,nodev,errors=panic,discard,noauto_da_alloc  wait,check,encryptable=footer
+
+# vold-managed volumes ("block device" is actually a sysfs devpath)
+/devices/platform/omap/omap_hsmmc.0/mmc_host/mmc1		/storage/sdcard1		auto		defaults		voldmanaged=sdcard1:auto
+/devices/platform/omap/musb-omap2430/musb-hdrc/usb1		/storage/usbdisk0		auto		defaults		voldmanaged=usbdisk0:auto
+
+# recovery
+/dev/block/mmcblk0p5		/boot				emmc		defaults		recoveryonly
+/dev/block/mmcblk0p6		/recovery			emmc		defaults		recoveryonly
+/dev/null		/sdcard				datamedia		defaults		recoveryonly
