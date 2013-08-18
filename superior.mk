@@ -64,12 +64,22 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
 
+# Prebuild file
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuild/gralloc.omap4.so:system/vendor/lib/hw/gralloc.omap4.so \
+    $(LOCAL_PATH)/prebuild/omaplfb_sgx544_112.ko:system/lib/modules/omaplfb_sgx544_112.ko \
+    $(LOCAL_PATH)/prebuild/pvrsrvkm_sgx544_112.ko:system/lib/modules/pvrsrvkm_sgx544_112.ko \
+    $(LOCAL_PATH)/prebuild/vendor-camera.piranha.so:system/lib/hw/vendor-camera.piranha.so
+
 # Packages
 PRODUCT_PACKAGES += \
     audio.primary.piranha \
+    libsecril-client \
     nfc.piranha \
+    camera.piranha \
     com.android.future.usb.accessory \
     hwcomposer.piranha \
+    libsecril-client-sap \
     lights.piranha \
     power.piranha \
     SamsungServiceMode \
@@ -133,11 +143,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/samsung/superior/configs/nfcee_access.xml:system/etc/nfcee_access.xml
 
-#ifeq ($(TARGET_PREBUILT_KERNEL),)
-#	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
-#else
-#	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-#endif
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
+else
+	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
 
 # Feature live wallpaper
 PRODUCT_COPY_FILES += \

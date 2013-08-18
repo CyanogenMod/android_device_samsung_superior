@@ -79,3 +79,12 @@
 
 #for NFC
 /dev/ttyO3                0600   nfc        nfc
+
+/dev/block/mmcblk0p4      0660   system     system
+/dev/diag                 0660   radio      radio
+# for usb printer
+/dev/usb/lp*           	  0660   system     usb
+# for usb medical device
+/dev/ttyUSB0 		  0666 	 system     system
+/dev/ttyUSB1 		  0666 	 system     system
+/dev/ttyUSB2 		  0666   system     system
