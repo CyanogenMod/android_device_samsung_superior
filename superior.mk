@@ -69,14 +69,14 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuild/gralloc.omap4.so:system/vendor/lib/hw/gralloc.omap4.so \
     $(LOCAL_PATH)/prebuild/omaplfb_sgx544_112.ko:system/lib/modules/omaplfb_sgx544_112.ko \
     $(LOCAL_PATH)/prebuild/pvrsrvkm_sgx544_112.ko:system/lib/modules/pvrsrvkm_sgx544_112.ko \
-    $(LOCAL_PATH)/prebuild/vendor-camera.piranha.so:system/lib/hw/vendor-camera.piranha.so
+    $(LOCAL_PATH)/prebuild/libsecface.so:system/lib/libsecface.so \
+    $(LOCAL_PATH)/prebuild/libskib.so:system/lib/libskib.so
 
 # Packages
 PRODUCT_PACKAGES += \
     audio.primary.piranha \
     libsecril-client \
     nfc.piranha \
-    camera.piranha \
     com.android.future.usb.accessory \
     hwcomposer.piranha \
     libsecril-client-sap \
