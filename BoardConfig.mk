@@ -35,7 +35,6 @@ BOARD_KERNEL_CMDLINE := console=ttyO2,115200n8 mem=1024M androidboot.console=tty
 TARGET_KERNEL_SOURCE := kernel/samsung/piranha
 TARGET_KERNEL_CONFIG := cyanogenmod_superior_defconfig
 
-#TARGET_PREBUILT_KERNEL := device/samsung/superior/kernel
 
 # Init
 TARGET_PROVIDES_INIT := true
@@ -132,10 +131,6 @@ TARGET_OTA_ASSERT_DEVICE := superior,GT-I9260
 
 # device-specific extensions to the updater binary
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/superior
-
-# Releasetools
-#TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/samsung/superior/releasetools/piranha_ota_from_target_files
-#TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := ./device/samsung/superior/releasetools/piranha_img_from_target_files
 
 # Use the non-open-source parts, if they're present
 -include vendor/samsung/superior/BoardConfigVendor.mk

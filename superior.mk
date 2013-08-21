@@ -141,12 +141,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/samsung/superior/configs/nfcee_access.xml:system/etc/nfcee_access.xml
 
-#ifeq ($(TARGET_PREBUILT_KERNEL),)
-#	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
-#else
-#	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-#endif
-
 # Feature live wallpaper
 PRODUCT_COPY_FILES += \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
