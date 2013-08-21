@@ -39,8 +39,10 @@ on init
 	mkdir /preload 0771 system system
 
 # ko files for exfat
-    insmod /lib/modules/exfat_core.ko
-    insmod /lib/modules/exfat_fs.ko
+    insmod /system/lib/modules/exfat_core.ko
+    insmod /system/lib/modules/exfat_fs.ko
+
+    insmod /system/lib/modules/scsi_wait_scan.ko
 
 on post-fs-data
 #    chmod 444 /proc/cmdline
@@ -167,7 +169,7 @@ on fs
     setprop ro.crypto.fuse_sdcard true
 # pvr module
     insmod /system/lib/modules/pvrsrvkm_sgx544_112.ko
-    insmod /system/lib/modules/omaplfb_sgx544_112.ko
+#    insmod /system/lib/modules/omaplfb_sgx544_112.ko
     start pvrsrvinit
     start pvrsrvctl
 

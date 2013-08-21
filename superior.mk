@@ -67,8 +67,6 @@ PRODUCT_COPY_FILES += \
 # Prebuild file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuild/gralloc.omap4.so:system/vendor/lib/hw/gralloc.omap4.so \
-    $(LOCAL_PATH)/prebuild/omaplfb_sgx544_112.ko:system/lib/modules/omaplfb_sgx544_112.ko \
-    $(LOCAL_PATH)/prebuild/pvrsrvkm_sgx544_112.ko:system/lib/modules/pvrsrvkm_sgx544_112.ko \
     $(LOCAL_PATH)/prebuild/libsecface.so:system/lib/libsecface.so \
     $(LOCAL_PATH)/prebuild/libskib.so:system/lib/libskib.so
 
@@ -143,11 +141,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/samsung/superior/configs/nfcee_access.xml:system/etc/nfcee_access.xml
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
-else
-	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
+#ifeq ($(TARGET_PREBUILT_KERNEL),)
+#	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
+#else
+#	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+#endif
 
 # Feature live wallpaper
 PRODUCT_COPY_FILES += \

@@ -32,10 +32,10 @@ BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_CMDLINE := console=ttyO2,115200n8 mem=1024M androidboot.console=ttyO2 vram=20M omapfb.vram=0:16M
 
 # Inline kernel building
-#TARGET_KERNEL_SOURCE := kernel/samsung/piranha
-#TARGET_KERNEL_CONFIG := cyanogenmod_superior_defconfig
+TARGET_KERNEL_SOURCE := kernel/samsung/piranha
+TARGET_KERNEL_CONFIG := cyanogenmod_superior_defconfig
 
-TARGET_PREBUILT_KERNEL := device/samsung/superior/kernel
+#TARGET_PREBUILT_KERNEL := device/samsung/superior/kernel
 
 # Init
 TARGET_PROVIDES_INIT := true
