@@ -75,6 +75,7 @@ PRODUCT_PACKAGES += \
     lights.piranha \
     power.piranha \
     SamsungServiceMode \
+    PinyinIME \
     tinyplay \
     Torch
 # NFC
