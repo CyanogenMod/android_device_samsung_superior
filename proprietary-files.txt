@@ -46,6 +46,8 @@ system/lib/libarcsoft_face_tracking.so
 system/lib/libarcsoft_smile_detection.so
 system/lib/libdmcFaceEngine.so
 system/lib/libdmcFaceEngine3GVT.so
+system/lib/libsecface.so
+system/lib/libskib.so
 #camera end
 system/lib/libti_chroma_nf_lib.so
 system/lib/libI420colorconvert.so

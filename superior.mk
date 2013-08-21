@@ -64,12 +64,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
 
-# Prebuild file
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuild/gralloc.omap4.so:system/vendor/lib/hw/gralloc.omap4.so \
-    $(LOCAL_PATH)/prebuild/libsecface.so:system/lib/libsecface.so \
-    $(LOCAL_PATH)/prebuild/libskib.so:system/lib/libskib.so
-
 # Packages
 PRODUCT_PACKAGES += \
     audio.primary.piranha \
