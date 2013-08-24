@@ -35,7 +35,7 @@ static pthread_mutex_t g_lock = PTHREAD_MUTEX_INITIALIZER;
 char const *const LCD_FILE = "/sys/class/backlight/panel/brightness";
 
 char const *const BUTTON_POWER = "/sys/class/sec/sec_touchkey/enable_disable";
-char const *const BUTTON_NOTIFICATION = "/sys/class/sec/sec_touchkey/brightness";
+char const *const BUTTON_NOTIFICATION = "/sys/class/sec/sec_touchkey/notification";
 
 void init_g_lock(void)
 {
@@ -106,9 +106,9 @@ static int set_light_backlight(struct light_device_t *dev,
     ALOGD("set_light_backlight brightness=%d\n", brightness);
 	err = write_int(LCD_FILE, brightness);
 
-    /*if (!previous_brightness && (brightness > 0)) {
+    if (!previous_brightness && (brightness > 0)) {
         err = write_int(BUTTON_POWER, brightness > 0 ? 1 : 0);
-    }*/
+    }
 
 	pthread_mutex_unlock(&g_lock);
 	return err;
@@ -176,7 +176,7 @@ struct hw_module_t HAL_MODULE_INFO_SYM = {
 	.version_major = 1,
 	.version_minor = 0,
 	.id = LIGHTS_HARDWARE_MODULE_ID,
-	.name = "Prianha lights Module",
+	.name = "Piranha lights Module",
 	.author = "The CyanogenMod Project",
 	.methods = &lights_module_methods,
 };
