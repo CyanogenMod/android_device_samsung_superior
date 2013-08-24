@@ -45,6 +45,7 @@ PRODUCT_COPY_FILES += \
 # Bluetooth configuration files
 PRODUCT_COPY_FILES += \
     system/bluetooth/data/main.le.conf:system/etc/bluetooth/main.conf
+
 # GPS
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.xml:system/etc/gps.xml \
@@ -78,12 +79,14 @@ PRODUCT_PACKAGES += \
     PinyinIME \
     tinyplay \
     Torch
+
 # NFC
 PRODUCT_PACKAGES += \
         libnfc \
         libnfc_jni \
         Nfc \
         Tag
+
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril_class=SamsungExynos4RIL \
@@ -146,8 +149,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=320
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    wifi.supplicant_scan_interval=180
+
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
-$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4334/device-bcm.mk)
 $(call inherit-product-if-exists, vendor/samsung/superior/superior-vendor.mk)
