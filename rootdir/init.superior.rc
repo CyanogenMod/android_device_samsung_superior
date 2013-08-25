@@ -14,6 +14,7 @@ on init
     mkdir /storage/emulated 0555 root root
     mkdir /storage/sdcard1 0775 system system
     mkdir /storage/usbdisk0 0775 system system
+	mkdir /storage/extSdCard 0775 system system
 
 
     export EXTERNAL_STORAGE /storage/emulated/legacy
@@ -31,6 +32,7 @@ on init
     symlink /storage/sdcard1 /mnt/extSdCard
     symlink /storage/usbdisk0 /usbdisk0
     symlink /storage/usbdisk0 /mnt/usbdisk0
+	symlink /storage/sdcard1 /storage/extSdCard
 
 
     chmod 0666 /dev/pvrsrvkm
@@ -405,6 +407,12 @@ on fs
     chown system system /sys/class/sec/sec_touchkey/touchkey_raw_data0
     chown system system /sys/class/sec/sec_touchkey/touchkey_raw_data1
     chown system system /sys/class/sec/sec_touchkey/touchkey_threshold
+
+	chown system system /sys/class/sec/sec_touchkey/enable_disable
+	chown system system /sys/class/sec/sec_touchkey/led_mode
+	chown system system /sys/class/sec/sec_touchkey/notification
+	
+	chmod 0666 /sys/class/sec/sec_touchkey/notification
 
 # Change permission for switch
     chmod 0660 /sys/class/sec/switch/uart_sel
