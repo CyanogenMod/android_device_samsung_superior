@@ -39,7 +39,6 @@ TARGET_KERNEL_CONFIG := cyanogenmod_superior_defconfig
 # Init
 TARGET_PROVIDES_INIT := true
 TARGET_PROVIDES_INIT_TARGET_RC := true
-TARGET_RECOVERY_INITRC := device/samsung/superior/rootdir/recovery.rc
 
 # Filesystem
 BOARD_NAND_PAGE_SIZE := 4096
