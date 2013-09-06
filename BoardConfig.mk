@@ -68,6 +68,9 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/f_mass_storage/lun%d/
 # RIL
 BOARD_MOBILEDATA_INTERFACE_NAME := "pdp0"
 
+#BOOTANIMATION
+PRODUCT_BOOTANIMATION := vendor/cm/prebuilt/common/bootanimation/720.zip
+
 # Wifi
 BOARD_WLAN_DEVICE                := bcmdhd
 BOARD_WLAN_DEVICE_REV            := bcm4334
