@@ -56,6 +56,7 @@ system/lib/libion.omap4.so
 system/lib/libmm_osal.so
 system/lib/libomission_avoidance.so
 system/lib/libsec-ril.so
+system/lib/libsecril-client.so
 system/lib/libsecnativefeature.so
 system/lib/libtvout_jni.so
 system/lib/libtvoutinterface.so
