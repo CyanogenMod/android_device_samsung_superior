@@ -65,18 +65,19 @@ PRODUCT_COPY_FILES += \
 
 # Packages
 PRODUCT_PACKAGES += \
-    audio.primary.piranha \
-    libsecril-client \
-    nfc.piranha \
     com.android.future.usb.accessory \
-    hwcomposer.piranha \
-    libsecril-client-sap \
-    lights.piranha \
-    power.piranha \
     SamsungServiceMode \
     PinyinIME \
     tinyplay \
     Torch
+
+# HAL
+PRODUCT_PACKAGES += \
+    audio.primary.piranha \
+    nfc.piranha \
+    hwcomposer.piranha \
+    lights.piranha \
+    power.piranha
 
 # NFC
 PRODUCT_PACKAGES += \
