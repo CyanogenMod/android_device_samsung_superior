@@ -25,7 +25,7 @@ system/etc/wifi/nvram_mfg.txt_semcosh
 system/etc/wifi/nvram_net.txt
 system/etc/wifi/nvram_net.txt_murata
 system/etc/wifi/nvram_net.txt_semcosh
-system/lib/hw/camera.omap4.so
+system/lib/hw/vendor-camera.piranha.so
 system/lib/hw/gps.omap4.so
 system/lib/hw/sensors.omap4.so
 #camera start

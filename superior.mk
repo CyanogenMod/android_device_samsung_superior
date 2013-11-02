@@ -73,6 +73,7 @@ PRODUCT_PACKAGES += \
 
 # HAL
 PRODUCT_PACKAGES += \
+    camera.piranha \
     audio.primary.piranha \
     nfc.piranha \
     hwcomposer.piranha \
