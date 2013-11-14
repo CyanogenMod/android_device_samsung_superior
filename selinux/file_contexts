@@ -1,9 +1,9 @@
 # GFX
-/dev/dsscomp                                u:object_r:video_device:s0
-/dev/pvrsrvkm                               u:object_r:powervr_device:s0
+/dev/dsscomp                                u:object_r:graphics_device:s0
+#/dev/pvrsrvkm                               u:object_r:powervr_device:s0
 
 # NFC
-/dev/pn544                                  u:object_r:nfc_device:s0
+#/dev/pn544                                  u:object_r:nfc_device:s0
 
 # RIL
 /dev/umts_boot0                             u:object_r:radio_device:s0
@@ -22,7 +22,7 @@
 /dev/ttyO0                                  u:object_r:gps_device:s0
 
 # Sensors
-/dev/i2c-4                                  u:object_r:sensors_device:s0
+#/dev/i2c-4                                  u:object_r:sensors_device:s0
 
 # Wifi
 /dev/rfkill                                 u:object_r:rfkill_device:s0
