@@ -101,10 +101,10 @@ BOARD_BLUEDROID_VENDOR_CONF := device/samsung/superior/bluetooth/vnd_superior.tx
 BOARD_USES_SECURE_SERVICES := true
 
 # Selinux
-BOARD_SEPOLICY_DIRS := \
+BOARD_SEPOLICY_DIRS += \
     device/samsung/superior/selinux
 
-BOARD_SEPOLICY_UNION := \
+BOARD_SEPOLICY_UNION += \
     file_contexts \
     file.te \
     device.te \
@@ -130,9 +130,6 @@ RECOVERY_FSTAB_VERSION := 2
 
 # assert
 TARGET_OTA_ASSERT_DEVICE := superior,GT-I9260
-
-# device-specific extensions to the updater binary
-TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/superior
 
 # Use the non-open-source parts, if they're present
 -include vendor/samsung/superior/BoardConfigVendor.mk
