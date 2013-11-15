@@ -13,8 +13,8 @@ on init
     mkdir /storage 0550 system sdcard_r
     mkdir /storage/emulated 0555 root root
     mkdir /storage/sdcard1 0775 system system
-    mkdir /storage/usbdisk0 0775 system system
-	mkdir /storage/extSdCard 0775 system system
+    mkdir /storage/usbdisk 0775 system system
+    mkdir /storage/extSdCard 0775 system system
 
 
     export EXTERNAL_STORAGE /storage/emulated/legacy
@@ -30,15 +30,15 @@ on init
     symlink /mnt/shell/emulated/0 /storage/emulated/legacy
     symlink /storage/sdcard1 /extSdCard
     symlink /storage/sdcard1 /mnt/extSdCard
-    symlink /storage/usbdisk0 /usbdisk0
-    symlink /storage/usbdisk0 /mnt/usbdisk0
-	symlink /storage/sdcard1 /storage/extSdCard
+    symlink /storage/usbdisk /usbdisk
+    symlink /storage/usbdisk /mnt/usbdisk
+    symlink /storage/sdcard1 /storage/extSdCard
 
 
     chmod 0666 /dev/pvrsrvkm
 	
-	mkdir /efs 0770 system efs
-	mkdir /preload 0771 system system
+    mkdir /efs 0770 system efs
+    mkdir /preload 0771 system system
 
 # ko files for exfat
     insmod /system/lib/modules/exfat_core.ko
@@ -408,11 +408,11 @@ on fs
     chown system system /sys/class/sec/sec_touchkey/touchkey_raw_data1
     chown system system /sys/class/sec/sec_touchkey/touchkey_threshold
 
-	chown system system /sys/class/sec/sec_touchkey/enable_disable
-	chown system system /sys/class/sec/sec_touchkey/led_mode
-	chown system system /sys/class/sec/sec_touchkey/notification
-	
-	chmod 0666 /sys/class/sec/sec_touchkey/notification
+    chown system system /sys/class/sec/sec_touchkey/enable_disable
+    chown system system /sys/class/sec/sec_touchkey/led_mode
+    chown system system /sys/class/sec/sec_touchkey/notification
+
+    chmod 0666 /sys/class/sec/sec_touchkey/notification
 
 # Change permission for switch
     chmod 0660 /sys/class/sec/switch/uart_sel
@@ -791,7 +791,7 @@ service TvoutService_C /system/bin/bintvoutservice
 on property:sys.boot_completed=1
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor	interactive
 
-	chown system system /sys/devices/system/cpu/cpufreq/interactive/timer_rate
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/timer_rate
     chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/timer_rate
     chown system system /sys/devices/system/cpu/cpufreq/interactive/min_sample_time
     chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/min_sample_time
@@ -806,15 +806,15 @@ on property:sys.boot_completed=1
     chown system system /sys/devices/system/cpu/cpufreq/interactive/boostpulse
     chown system system /sys/devices/system/cpu/cpufreq/interactive/input_boost
     chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/input_boost
-	chown system system /sys/devices/system/cpu/cpufreq/interactive/screen_off_differential
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/screen_off_differential
     chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/screen_off_differential
 
-	write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 20000
+    write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 20000
     write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 20000
     write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 1100000
     write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 70
     write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay 40000
-	write /sys/devices/system/cpu/cpufreq/interactive/screen_off_differential 10
+    write /sys/devices/system/cpu/cpufreq/interactive/screen_off_differential 10
 
     write /sys/block/mmcblk0/queue/scheduler cfq
 # SISO-ANDR-PERF :: END HERE
@@ -822,7 +822,7 @@ on property:sys.boot_completed=1
 # LPM
 on property:ro.bootmode=charger
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor	interactive
-	write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 20000
+    write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 20000
     write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 60000
     write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 1100000
     write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 50
