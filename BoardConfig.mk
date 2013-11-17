@@ -118,6 +118,9 @@ BOARD_SEPOLICY_UNION += \
     vold.te \
     wpa_supplicant.te
 
+# Override healthd HAL
+BOARD_HAL_STATIC_LIBRARIES := libhealthd.piranha
+
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/superior/recovery/recovery_keys.c
