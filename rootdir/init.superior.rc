@@ -883,3 +883,11 @@ service smc_pa /system/bin/smc_pa_ctrl \
     user root
     group root
     oneshot
+
+# Workaround for broken incall audio
+service bootsnd /system/bin/tinyplay /system/etc/sound/silence.wav -D 0 -d 0 -p 880
+    class late_start
+    user root
+    group audio
+    oneshot
+
