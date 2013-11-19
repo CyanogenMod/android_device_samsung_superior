@@ -121,6 +121,9 @@ BOARD_SEPOLICY_UNION += \
 # Override healthd HAL
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.piranha
 
+# Needed for blobs
+COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
+
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/superior/recovery/recovery_keys.c
