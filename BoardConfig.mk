@@ -57,6 +57,9 @@ BOARD_HARDWARE_CLASS := device/samsung/superior/cmhw
 BOARD_EGL_CFG := device/samsung/superior/configs/egl.cfg
 USE_OPENGL_RENDERER := true
 
+# Force the screenshot path to CPU consumer
+COMMON_GLOBAL_CFLAGS += -DFORCE_SCREENSHOT_CPU_PATH
+
 # Camera
 BOARD_CAMERA_HAVE_ISO := true
 COMMON_GLOBAL_CFLAGS += -DHAVE_ISO
