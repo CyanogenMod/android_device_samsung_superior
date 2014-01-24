@@ -3101,6 +3101,18 @@ static int adev_open(const hw_module_t* module, const char* name,
     /* register callback for wideband AMR setting */
     ril_register_set_wb_amr_callback(audio_set_wb_amr_callback, (void *)adev);
 
+    //Workaround start
+    pthread_mutex_lock(&adev->lock);
+    adev->mode = AUDIO_MODE_IN_CALL;
+    select_mode(adev);
+    pthread_mutex_unlock(&adev->lock);
+	
+	pthread_mutex_lock(&adev->lock);
+    adev->mode = AUDIO_MODE_NORMAL;
+    select_mode(adev);
+    pthread_mutex_unlock(&adev->lock);
+    //Workaround end
+
     *device = &adev->hw_device.common;
 
     return 0;
