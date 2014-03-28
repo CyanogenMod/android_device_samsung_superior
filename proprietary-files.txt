@@ -30,8 +30,6 @@ system/lib/hw/gps.omap4.so
 system/lib/hw/sensors.omap4.so
 #camera start
 system/lib/libexif.so
-system/lib/libexifa.so
-system/lib/libjpega.so
 system/lib/libmedia_native.so
 system/lib/libsecjpeginterface.so
 system/lib/libseccameracore.so

@@ -88,6 +88,10 @@ PRODUCT_PACKAGES += \
         Nfc \
         Tag
 
+PRODUCT_PACKAGES += \
+    libexifa \
+    libjpega
+
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril_class=SamsungExynos4RIL \
