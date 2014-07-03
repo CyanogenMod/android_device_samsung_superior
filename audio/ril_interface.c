@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#define ALOG_TAG "audio_hw_primary"
-/*#define ALOG_NDEBUG 0*/
+#define LOG_TAG "Audio RIL Interface"
+/*#define LOG_NDEBUG 0*/
 
 #include <dlfcn.h>
 #include <stdlib.h>
