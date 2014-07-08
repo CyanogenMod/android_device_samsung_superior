@@ -198,12 +198,6 @@ struct route_setting bt_output[] = {
     { .ctl_name = NULL, },
 };
 
-struct route_setting bt_output_disable[] = {
-    { .ctl_name = "AIF2DAC2L Mixer AIF2 Switch", .intval = 0, },
-    { .ctl_name = "AIF2DAC2R Mixer AIF2 Switch", .intval = 0, },
-    { .ctl_name = NULL, },
-};
-
 struct route_setting bt_input[] = {
     { .ctl_name = "AIF2ADC Mux", .intval = 1, },
     { .ctl_name = "AIF1ADCL Source", .intval = 0, },
@@ -217,8 +211,19 @@ struct route_setting bt_input[] = {
     { .ctl_name = NULL, },
 };
 
-struct route_setting bt_input_disable[] = {
+struct route_setting bt_disable[] = {
+    { .ctl_name = "AIF1DAC1 Volume", .intval = 96, },
+    { .ctl_name = "AIF1 Boost Volume", .intval = 0, },
+    { .ctl_name = "DAC2 Volume", .intval = 96, },
+    { .ctl_name = "AIF2ADC Volume", .intval = 96, },
     { .ctl_name = "AIF2ADC Mux", .intval = 0, },
+    { .ctl_name = "MIXINL IN2L Volume", .intval = 0, },
+    { .ctl_name = "LINEOUT1N Switch", .intval = 1, },
+    { .ctl_name = "LINEOUT1P Switch", .intval = 1, },
+    { .ctl_name = "AIF2ADC HPF Mode", .intval = 0, },
+    { .ctl_name = "AIF2ADC HPF Switch", .intval = 0, },
+    { .ctl_name = "AIF2DAC2R Mixer AIF2 Switch", .intval = 0, },
+    { .ctl_name = "AIF2DAC2L Mixer AIF2 Switch", .intval = 0, },
     { .ctl_name = "AIF1ADC1R Mixer AIF2 Switch", .intval = 0, },
     { .ctl_name = "AIF1ADC1L Mixer AIF2 Switch", .intval = 0, },
     { .ctl_name = NULL, },
