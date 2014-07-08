@@ -25,7 +25,7 @@ TARGET_NO_RADIOIMAGE := true
 
 TARGET_BOARD_OMAP_CPU := 4470
 TARGET_BOOTLOADER_BOARD_NAME := piranha
-TARGET_BOARD_INFO_FILE ?= device/samsung/superior/board-info.txt
+TARGET_BOARD_INFO_FILE := device/samsung/superior/board-info.txt
 
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_BASE := 0x80000000
