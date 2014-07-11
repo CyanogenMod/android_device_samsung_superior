@@ -28,7 +28,7 @@
     <item name="screen.full">260</item>
     <item name="wifi.on">4</item>
     <item name="wifi.active">120</item>
-    <item name="wifi.scan">200</item>
+    <item name="wifi.scan">220</item>
     <item name="dsp.audio">88</item>
     <item name="dsp.video">88</item>
     <item name="radio.active">185</item>
@@ -52,7 +52,7 @@
   <!-- Power consumption when CPU is idle -->
     <item name="cpu.idle">1.4</item>
   <!-- Power consumption due to wake lock held -->
-    <item name="cpu.awake">20</item>
+    <item name="cpu.awake">44</item>
   <!-- Power consumption at different speeds -->
     <array name="cpu.active">
       <value>75.8</value>  <!-- 396.8 MHz CPU speed -->
