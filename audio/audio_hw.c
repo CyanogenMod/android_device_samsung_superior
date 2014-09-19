@@ -584,14 +584,14 @@ static void select_mode(struct piranha_audio_device *adev)
             if (adev->out_device == AUDIO_DEVICE_OUT_SPEAKER) {
                 adev->out_device = AUDIO_DEVICE_OUT_EARPIECE;
                 adev->in_device = AUDIO_DEVICE_IN_BUILTIN_MIC & ~AUDIO_DEVICE_BIT_IN;
-            } else
+            } else {
                 adev->out_device &= ~AUDIO_DEVICE_OUT_SPEAKER;
             select_output_device(adev);
             start_call(adev);
             ril_set_call_clock_sync(&adev->ril, SOUND_CLOCK_START);
             adev_set_voice_volume(&adev->hw_device, adev->voice_volume);
             adev->in_call = 1;
-        }
+            }
     } else {
         ALOGE("Leaving IN_CALL state, in_call=%d, mode=%d",
              adev->in_call, adev->mode);
