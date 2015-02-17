@@ -29,12 +29,13 @@ TARGET_BOARD_INFO_FILE := device/samsung/superior/board-info.txt
 
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := console=ttyO2,115200n8 mem=1024M androidboot.console=ttyO2 vram=20M omapfb.vram=0:16M androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := console=ttyO2,115200n8 mem=1024M androidboot.console=ttyO2 vram=20M omapfb.vram=0:16M androidboot.selinux=permissive selinux=0
 
 # Inline kernel building
 TARGET_KERNEL_SOURCE := kernel/samsung/piranha
 TARGET_KERNEL_CONFIG := cyanogenmod_superior_defconfig
 
+TARGET_SPECIFIC_HEADER_PATH += device/samsung/superior/include
 
 # Init
 TARGET_PROVIDES_INIT := true
@@ -63,8 +64,8 @@ COMMON_GLOBAL_CFLAGS += -DFORCE_SCREENSHOT_CPU_PATH
 # Camera
 BOARD_CAMERA_HAVE_ISO := true
 COMMON_GLOBAL_CFLAGS += -DHAVE_ISO
-COMMON_GLOBAL_CFLAGS += -DDISABLE_HW_ID_MATCH_CHECK
 COMMON_GLOBAL_CFLAGS += -DSAMSUNG_CAMERA_HARDWARE
+SAMSUNG_CAMERA_LEGACY := true
 
 # Vold
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/f_mass_storage/lun%d/file"
@@ -92,6 +93,8 @@ WIFI_DRIVER_MODULE_ARG           := "firmware_path=/system/etc/wifi/bcmdhd_sta.b
 WIFI_DRIVER_MODULE_AP_ARG        := "firmware_path=/system/etc/wifi/bcmdhd_apsta.bin nvram_path=/system/etc/wifi/nvram_net.txt"
 WIFI_BAND                        := 802_11_ABG
 BOARD_HAVE_SAMSUNG_WIFI          := true
+BOARD_NO_APSME_ATTR              := true
+BOARD_NO_WIFI_HAL                := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -124,8 +127,6 @@ BOARD_SEPOLICY_UNION += \
 # Override healthd HAL
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.piranha
 
-# Needed for blobs
-COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"

@@ -652,10 +652,11 @@ service bt_dut_cmd /system/bin/bcm_dut
     disabled
     oneshot
 
-service pvrsrvinit /vendor/bin/pvrsrvinit
+service pvrsrvinit /system/bin/pvrsrvinit
     class core
     user root
     group root
+    seclabel u:r:pvrsrvinit:s0
     oneshot
     disabled
 
@@ -663,6 +664,7 @@ service pvrsrvctl /vendor/bin/pvrsrvctl_SGX544_112 --start --no-module
     class core
     user root
     group root
+    seclabel u:r:pvrsrvinit:s0
     oneshot
     disabled
 
