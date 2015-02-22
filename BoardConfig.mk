@@ -29,7 +29,7 @@ TARGET_BOARD_INFO_FILE := device/samsung/superior/board-info.txt
 
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := console=ttyO2,115200n8 mem=1024M androidboot.console=ttyO2 vram=20M omapfb.vram=0:16M androidboot.selinux=permissive selinux=0
+BOARD_KERNEL_CMDLINE := console=ttyO2,115200n8 mem=1024M androidboot.console=ttyO2 vram=20M omapfb.vram=0:16M
 
 # Inline kernel building
 TARGET_KERNEL_SOURCE := kernel/samsung/piranha
@@ -65,7 +65,7 @@ COMMON_GLOBAL_CFLAGS += -DFORCE_SCREENSHOT_CPU_PATH
 BOARD_CAMERA_HAVE_ISO := true
 COMMON_GLOBAL_CFLAGS += -DHAVE_ISO
 COMMON_GLOBAL_CFLAGS += -DSAMSUNG_CAMERA_HARDWARE
-SAMSUNG_CAMERA_LEGACY := true
+COMMON_GLOBAL_CFLAGS += -DSAMSUNG_CAMERA_LEGACY
 
 # Vold
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/f_mass_storage/lun%d/file"
@@ -115,11 +115,19 @@ BOARD_SEPOLICY_UNION += \
     file.te \
     device.te \
     domain.te \
+    drmserver.te \
+    fRom.te \
+    geomagneticd.te \
+    orientationd.te \
     pvrsrvinit.te \
     init.te \
+    init_shell.te \
     mediaserver.te \
+    nfc.te \
     rild.te \
+    smc_pa.te \
     system.te \
+    sysinit.te \
     ueventd.te \
     vold.te \
     wpa_supplicant.te

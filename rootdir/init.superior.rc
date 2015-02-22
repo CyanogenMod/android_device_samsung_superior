@@ -638,6 +638,7 @@ service fRom /system/bin/fRom \
     user media
     group media
     class late_start
+    seclabel u:r:fRom:s0
     oneshot
 
 # AT Distributor for factory test
@@ -673,11 +674,13 @@ service orientationd /system/bin/orientationd
     class main
     user compass
     group input
+    seclabel u:r:orientationd:s0
 
 service geomagneticd /system/bin/geomagneticd
     class main
     user compass
     group system input
+    seclabel u:r:geomagneticd:s0
 
 service p2p_supplicant /system/bin/wpa_supplicant \
         -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf -N \
@@ -803,13 +806,14 @@ service gpsd /system/bin/gpsd -c /system/etc/gps.xml
     socket gps seqpacket 0660 gps system
     user gps
     group system inet sdcard_rw
+    u:object_r:gpsd:s0
     ioprio be 0
 
 # TVout
-service TvoutService_C /system/bin/bintvoutservice
-    class main
-    user system
-    group graphics
+#service TvoutService_C /system/bin/bintvoutservice
+#    class main
+#    user system
+#    group graphics
 
 # SISO-ANDR-PERF :: START Changing governor to interactive and secheduler to cfq after boot complete
 on property:sys.boot_completed=1
@@ -887,6 +891,7 @@ service smc_pa /system/bin/smc_pa_ctrl \
     class core
     user root
     group root
+    seclabel u:r:smc_pa:s0
     oneshot
 
 # Workaround for broken incall audio

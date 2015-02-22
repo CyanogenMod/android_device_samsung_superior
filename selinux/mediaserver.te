@@ -1,3 +1,4 @@
 allow mediaserver { firmware_camera }:file r_file_perms;
 allow mediaserver firmware_camera:dir r_dir_perms;
 allow mediaserver camera_data_file:file rw_file_perms;
+allow mediaserver system_server:unix_stream_socket { read write };

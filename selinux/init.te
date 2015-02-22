@@ -1,1 +1,5 @@
 allow init wpa_socket:unix_dgram_socket { bind create };
+allow init self:process execmem;
+allow init self:capability sys_module;
+allow init radio_device:lnk_file relabelto;
+allow init self:tcp_socket *;

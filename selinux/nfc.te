@@ -1,0 +1,2 @@
+allow nfc nfc_device:chr_file *;
+allow nfc firmware_mfc:file r_file_perms;
