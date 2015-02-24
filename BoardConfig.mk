@@ -113,11 +113,13 @@ BOARD_SEPOLICY_DIRS += \
 BOARD_SEPOLICY_UNION += \
     file_contexts \
     file.te \
+    app.te \
     device.te \
     domain.te \
     drmserver.te \
     fRom.te \
     geomagneticd.te \
+    gpsd.te \
     orientationd.te \
     pvrsrvinit.te \
     init.te \
