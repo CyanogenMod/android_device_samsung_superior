@@ -190,7 +190,7 @@
     <!--integer name="config_multiuserMaximumUsers">4</integer-->
 
     <!-- Whether Multiuser UI should be shown -->
-    <bool name="config_enableMultiUserUI">true</bool>
+    <!--bool name="config_enableMultiUserUI">true</bool-->
 
     <!-- Workaround for devices with broken keyboards
     <bool name="config_forceDisableHardwareKeyboard">true</bool> -->
