@@ -52,7 +52,7 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 TARGET_USERIMAGES_USE_EXT4 := true
 
 # Hardware tunables
-BOARD_HARDWARE_CLASS := device/samsung/superior/cmhw
+#BOARD_HARDWARE_CLASS := device/samsung/superior/cmhw
 
 # Egl
 BOARD_EGL_CFG := device/samsung/superior/configs/egl.cfg
