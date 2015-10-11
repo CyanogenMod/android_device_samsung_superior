@@ -91,7 +91,7 @@ WIFI_DRIVER_FW_PATH_P2P          := "/system/etc/wifi/bcmdhd_p2p.bin"
 WIFI_DRIVER_MODULE_NAME          := "dhd"
 WIFI_DRIVER_MODULE_ARG           := "firmware_path=/system/etc/wifi/bcmdhd_sta.bin nvram_path=/system/etc/wifi/nvram_net.txt"
 WIFI_DRIVER_MODULE_AP_ARG        := "firmware_path=/system/etc/wifi/bcmdhd_apsta.bin nvram_path=/system/etc/wifi/nvram_net.txt"
-WIFI_BAND                        := 802_11_ABG
+WIFI_BAND                        := 802_11_ABGN
 BOARD_HAVE_SAMSUNG_WIFI          := true
 BOARD_NO_APSME_ATTR              := true
 BOARD_NO_WIFI_HAL                := true
