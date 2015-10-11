@@ -106,6 +106,12 @@ BOARD_BLUEDROID_VENDOR_CONF := device/samsung/superior/bluetooth/vnd_superior.tx
 # Security
 BOARD_USES_SECURE_SERVICES := true
 
+# Enable dex-preoptimization to speed up first boot sequence
+WITH_DEXPREOPT := true
+WITH_DEXPREOPT_PIC := true
+WITH_DEXPREOPT_COMP := false
+PRODUCT_DEX_PREOPT_DEFAULT_FLAGS := --compiler-filter=everything
+
 # Selinux
 BOARD_SEPOLICY_DIRS += \
     device/samsung/superior/selinux
