@@ -176,6 +176,7 @@ on property:init.svc.media=restarting
 on fs
     mkdir /efs
     mount_all /fstab.superior
+    swapon_all /fstab.superior
     setprop ro.crypto.fuse_sdcard true
 # pvr module
     insmod /system/lib/modules/pvrsrvkm_sgx544_112.ko
