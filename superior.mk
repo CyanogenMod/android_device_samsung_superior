@@ -156,6 +156,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.bq.gpu_to_cpu_unsupported=1 \
     ro.zygote.disable_gl_preload=true
 
+# ART
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat-filter=everything \
+    dalvik.vm.dex2oat-flags=--no-watch-dog \
+    dalvik.vm.image-dex2oat-filter=everything
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=320
 
