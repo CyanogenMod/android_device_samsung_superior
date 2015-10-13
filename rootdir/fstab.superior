@@ -19,5 +19,4 @@
 /dev/null                   /sdcard     datamedia           defaults        recoveryonly
 
 # zRAM
-/dev/block/zram0            none        swap                defaults        zramsize=134217728           swapprio=1000
-/dev/block/zram1            none        swap                defaults        zramsize=134217728           swapprio=1000
+/dev/block/zram0            none        swap                defaults        zramsize=268435456
